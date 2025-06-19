@@ -18,17 +18,19 @@ bond_1 = "Bulgarian Bond (30yr, 4.625%)"
 bond_2 = "Loews Corp Bond (5yr, 3.2%)"
 bond_3 = "Japan Bond (1yr, 0%)" #zero-coupon
 
-# your real data:
+# generate yields
 yields    = np.linspace(0, 10, 101)
-prices_30 = [bond_price(100, 0.04625, 30, y/100) for y in yields]  # 1)
-prices_5  = [bond_price(100, 0.03200,  5, y/100) for y in yields]  # 2)
-prices_1  = [100/(1 + y/100)           for y in yields]            # 3)
+
+# hardcode real data:
+prices_b1 = [bond_price(100, 0.04625, 30, y/100) for y in yields]  # 1)
+prices_b2  = [bond_price(100, 0.03200,  5, y/100) for y in yields]  # 2)
+prices_b3  = [100/(1 + y/100)           for y in yields]            # 3)
 
 # 1) draw the chart
 fig, ax = plt.subplots(figsize=(8,5))
-ax.plot(yields, prices_30, label=bond_1)
-ax.plot(yields, prices_5,  label=bond_2)
-ax.plot(yields, prices_1,  label=bond_3)
+ax.plot(yields, prices_b1, label=bond_1)
+ax.plot(yields, prices_b2,  label=bond_2)
+ax.plot(yields, prices_b3,  label=bond_3)
 ax.set(
     xlabel="Yield-to-Maturity (%)",
     ylabel="Bond Price (% of Par)",

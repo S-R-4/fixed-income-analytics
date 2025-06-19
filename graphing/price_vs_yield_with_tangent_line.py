@@ -1,5 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+
+# --- load your sheet (adjust filename and sheet name as needed) ---
+#df = pd.read_excel("your_file.xlsx", sheet_name="Sheet1")  
+#df = pd.read_excel("your_file.xlsx", sheet_name="Sheet1", header=1)
+
+#ytm          = df["YTM"].to_numpy()
+#price        = df["PRICE"].to_numpy()
+#duration_est = df["DURATION ESTIMATE"].to_numpy()
 
 # Original data arrays
 ytm = np.array([
