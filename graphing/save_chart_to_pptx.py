@@ -5,6 +5,14 @@ from pptx import Presentation
 from pptx.util import Inches
 from io import BytesIO
 
+# Bond pricing function
+def bond_price(face, coupon_rate, years, ytm):
+    coupon = face * coupon_rate
+    # Present value of coupons + face
+    pv_coupons = sum(coupon / (1 + ytm) ** t for t in range(1, years + 1))
+    pv_face    = face / (1 + ytm) ** years
+    return pv_coupons + pv_face
+
 # identify bonds
 bond_1 = "Bulgarian Bond (30yr, 4.625%)"
 bond_2 = "Loews Corp Bond (5yr, 3.2%)"
