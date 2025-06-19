@@ -15,7 +15,6 @@ face_value  = 100
 ytm_values  = np.linspace(0, 0.10, 101)  # 0% to 10% in 0.1% steps
 
 # Identify bonds
-
 bond_1 = "Bulgarian Bond (30yr, 4.625%)"
 bond_2 = "Loews Corp Bond (5yr, 3.2%)"
 bond_3 = "Japan Bond (1yr, 0%)" #zero-coupon
